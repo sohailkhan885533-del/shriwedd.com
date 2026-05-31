@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Royal Wedding of Shri Krishna & Shri Gay</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Indian/Royal Aesthetics -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Great+Vibes&family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons for Beautiful UX Elements -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#fffdf0',
+                            100: '#fef9cd',
+                            200: '#fdf091',
+                            300: '#fae14f',
+                            400: '#f7cf1d',
+                            500: '#dca60a',
+                            600: '#be8105',
+                            700: '#9b5f06',
+                            800: '#7e4b0b',
+                            900: '#683d0e',
+                        },
+                        royal: {
+                            maroon: '#580812',
+                            red: '#800000',
+                            crimson: '#a30000',
+                            gold: '#d4af37',
+                            ivory: '#fdfbf7',
+                            dark: '#1c0205'
+                        }
+                    },
+                    fontFamily: {
+                        royal: ['"Cinzel Decorative"', 'serif'],
+                        cursive: ['"Great Vibes"', 'cursive'],
+                        serif: ['"Marcellus"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Premium Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1c0205;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 4px;
+        }
+        
+        /* Custom Indian Mandala and Pattern Borders */
+        .royal-border-gold {
+            border: 4px double #d4af37;
+            position: relative;
+        }
+        .royal-border-gold::before {
+            content: '';
+            position: absolute;
+            top: 4px; left: 4px; right: 4px; bottom: 4px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            pointer-events: none;
+        }
+
+        /* Ambient Indian Palace Background Elements */
+        .palace-bg {
+            background-color: #1c0205;
+            background-image: radial-gradient(circle at 50% 50%, #3a030a 0%, #1c0205 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Arch Style Cards inspired by Mughal & Rajput Architecture */
+        .royal-arch {
+            border-radius: 50% 50% 0 0 / 40% 40% 0 0;
+            border: 3px solid #d4af37;
+            position: relative;
+            background: rgba(44, 4, 9, 0.85);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6), inset 0 0 30px rgba(212, 175, 55, 0.2);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .royal-arch:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(212,175,55,0.25), inset 0 0 40px rgba(212,175,55,0.3);
+            border-color: #f7cf1d;
+        }
+
+        /* Falling Flower Petals & Sparkle Animations */
+        @keyframes fall {
+            0% {
+                transform: translateY(-50px) rotate(0deg) translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(105vh) rotate(360deg) translateX(100px);
+                opacity: 0;
+            }
+        }
+        
+        .petal {
+            position: absolute;
+            background: radial-gradient(#ff6b8b, #e11d48);
+            border-radius: 150% 0 150% 150%;
+            pointer-events: none;
+            z-index: 10;
+            opacity: 0.85;
+            animation: fall linear infinite;
+        }
+
+        .gold-sparkle {
+            position: absolute;
+            background: radial-gradient(circle, #fffdf0 10%, #d4af37 60%, transparent 100%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 5;
+            animation: fall linear infinite;
+            filter: drop-shadow(0 0 5px #f7cf1d);
+        }
+
+        /* Grand Invitation Card Opening Animation */
+        .card-envelope {
+            perspective: 1500px;
+            transition: all 1.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .envelope-left {
+            transform-origin: left center;
+            transition: transform 1.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .envelope-right {
+            transform-origin: right center;
+            transition: transform 1.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .open-palace #central-seal {
+            transform: scale(0) rotate(360deg);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 1.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+        }
+
+        .open-palace .envelope-left {
+            transform: rotateY(-130deg);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .open-palace .envelope-right {
+            transform: rotateY(130deg);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .open-palace .inner-card {
+            transform: scale(1.02);
+            opacity: 1;
+        }
+
+        /* Golden Glow and Pulsing */
+        .glow-gold {
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.8), 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .border-glow {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Beautiful Shimmer & Pulse effects */
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.85; }
+        }
+        .shimmer-light {
+            animation: pulseGlow 4s infinite ease-in-out;
+        }
+
+        /* Mandap / Arch silhouette background */
+        .mandap-arch {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,100 C20,30 35,10 50,10 C65,10 80,30 100,100 Z" fill="none" stroke="%23d4af37" stroke-width="1" opacity="0.3"/></svg>');
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+<body class="palace-bg text-stone-100 font-sans overflow-hidden">
+
+    <!-- Ambient Floating Rose Petals & Golden Sparkles Container -->
+    <div id="ambient-container" class="fixed inset-0 pointer-events-none z-20 overflow-hidden"></div>
+
+    <!-- Music Player with Traditional Wedding Music -->
+    <div class="fixed bottom-6 right-6 z-50 flex items-center gap-2">
+        <button id="music-btn" class="w-12 h-12 md:w-14 md:h-14 bg-royal-gold hover:bg-gold-400 text-royal-dark rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110 border-2 border-white focus:outline-none">
+            <i id="music-icon" class="fas fa-play text-base md:text-lg"></i>
+        </button>
+        <div id="music-tooltip" class="bg-royal-dark/95 border border-royal-gold text-xs px-3 py-1.5 rounded shadow-lg text-gold-300 hidden md:block">
+            Play Shehnai Ambiance
+        </div>
+    </div>
+
+    <!-- MAIN LANDING: Grand Animated Opening Invitation Card Envelope -->
+    <div id="grand-opening-screen" class="fixed inset-0 z-50 flex items-center justify-center p-3 md:p-8 bg-royal-dark overflow-hidden transition-all duration-1000">
+        <!-- Royal Palace Background Pillars & Lights inside Invitation Viewport -->
+        <div class="absolute inset-0 opacity-15 pointer-events-none">
+            <div class="absolute inset-y-0 left-0 w-16 md:w-32 border-r border-royal-gold/30 bg-repeat-y" style="background-image: radial-gradient(circle, #d4af37 1px, transparent 1px); background-size: 20px 20px;"></div>
+            <div class="absolute inset-y-0 right-0 w-16 md:w-32 border-l border-royal-gold/30 bg-repeat-y" style="background-image: radial-gradient(circle, #d4af37 1px, transparent 1px); background-size: 20px 20px;"></div>
+        </div>
+
+        <div id="card-envelope" class="card-envelope relative w-full max-w-4xl h-[88vh] md:h-[85vh] max-h-[750px] bg-royal-maroon rounded-2xl border-2 md:border-4 border-royal-gold flex items-center justify-center overflow-hidden shadow-[0_0_60px_rgba(0,0,0,0.9)] cursor-pointer">
+            
+            <!-- CENTRAL PULSING ROYAL SEAL (Tap to Open) -->
+            <div id="central-seal" class="absolute z-30 w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-b from-[#f7cf1d] to-[#be8105] border-2 md:border-4 border-[#1c0205] shadow-[0_0_35px_rgba(212,175,55,0.8)] flex flex-col items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300 animate-bounce">
+                <div class="text-royal-dark text-lg md:text-xl"><i class="fas fa-om"></i></div>
+                <span class="font-royal text-xl md:text-2xl font-black text-royal-dark tracking-tighter">K & G</span>
+                <span class="text-[8px] md:text-[9px] font-sans font-extrabold text-royal-dark/95 uppercase tracking-widest mt-0.5">Tap to Open</span>
+            </div>
+
+            <!-- LEFT DOOR/GATE -->
+            <div class="envelope-left absolute left-0 top-0 bottom-0 w-1/2 bg-gradient-to-r from-royal-maroon to-[#42040b] z-20 border-r-2 border-royal-gold p-4 md:p-6 flex flex-col justify-between items-end shadow-2xl transition-all duration-1000">
+                <!-- Royal Seal Half and Ornate Patterns -->
+                <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+                <!-- Top Ornate Arch Motif -->
+                <div class="w-full text-left opacity-60">
+                    <svg class="w-16 h-16 md:w-24 md:h-24 fill-current text-royal-gold" viewBox="0 0 100 100">
+                        <path d="M10,0 C30,30 20,70 100,50 L100,0 Z"/>
+                    </svg>
+                </div>
+                <div class="w-full text-right text-royal-gold/50 font-serif text-xs md:text-sm tracking-widest uppercase mb-4">
+                    Shri Krishna
+                </div>
+            </div>
+
+            <!-- RIGHT DOOR/GATE -->
+            <div class="envelope-right absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-l from-royal-maroon to-[#42040b] z-20 border-l-2 border-royal-gold p-4 md:p-6 flex flex-col justify-between items-start shadow-2xl transition-all duration-1000">
+                <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+                <!-- Top Ornate Arch Motif -->
+                <div class="w-full text-right opacity-60">
+                    <svg class="w-16 h-16 md:w-24 md:h-24 fill-current text-royal-gold transform scale-x-[-1]" viewBox="0 0 100 100">
+                        <path d="M10,0 C30,30 20,70 100,50 L100,0 Z"/>
+                    </svg>
+                </div>
+                <div class="w-full text-left text-royal-gold/50 font-serif text-xs md:text-sm tracking-widest uppercase mb-4">
+                    Shri Gay
+                </div>
+            </div>
+
+            <!-- CENTRAL INVITATION CARD (Slid inside / revealed) -->
+            <div class="inner-card absolute inset-2.5 md:inset-8 bg-[#fdfbf7] text-royal-dark rounded-xl border-2 md:border-4 border-double border-royal-gold z-10 flex flex-col justify-between p-4 md:p-12 text-center transition-all duration-1000 transform scale-95 opacity-50 overflow-y-auto">
+                
+                <!-- Royal Border Corners -->
+                <div class="absolute top-2 left-2 text-royal-gold text-xl md:text-2xl opacity-80"><i class="fas fa-gopuram"></i></div>
+                <div class="absolute top-2 right-2 text-royal-gold text-xl md:text-2xl opacity-80"><i class="fas fa-gopuram"></i></div>
+                <div class="absolute bottom-2 left-2 text-royal-gold text-xl md:text-2xl opacity-80"><i class="fas fa-gopuram"></i></div>
+                <div class="absolute bottom-2 right-2 text-royal-gold text-xl md:text-2xl opacity-80"><i class="fas fa-gopuram"></i></div>
+
+                <!-- Traditional Royal Indian Arch Overlay Graphic background -->
+                <div class="absolute inset-0 opacity-[0.04] pointer-events-none" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M30 0 L60 30 L30 60 L0 30 Z" fill="%23000"/></svg>');"></div>
+
+                <div class="my-auto space-y-3 md:space-y-6">
+                    <span class="text-[10px] md:text-xs uppercase tracking-[0.25em] md:tracking-[0.3em] text-royal-red font-semibold font-sans block">The Imperial Wedding Invitation</span>
+                    
+                    <!-- Lord Ganesha Motif -->
+                    <div class="flex justify-center my-1 md:my-2">
+                        <div class="w-16 h-16 md:w-20 md:h-20 text-royal-gold flex items-center justify-center border-2 border-royal-gold/30 rounded-full bg-royal-maroon p-1.5 md:p-2 shadow-inner">
+                            <svg class="w-10 h-10 md:w-14 md:h-14 fill-current text-gold-300" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M50,10 C45,10 40,15 40,25 C40,30 42,35 45,38 C42,42 38,48 38,55 C38,65 43,70 50,70 C57,70 62,65 62,55 C62,48 58,42 55,38 C58,35 60,30 60,25 C60,15 55,10 50,10 Z M50,15 C54,15 56,18 56,25 C56,30 53,33 50,33 C47,33 44,30 44,25 C44,18 46,15 50,15 Z M50,40 C54,43 57,48 57,55 C57,61 54,65 50,65 C46,65 43,61 43,55 C43,48 46,43 50,40 Z" />
+                                <path d="M50,70 L50,90 C45,90 35,85 35,75" stroke="currentColor" stroke-width="3" fill="none"/>
+                                <path d="M50,70 L50,90 C55,90 65,85 65,75" stroke="currentColor" stroke-width="3" fill="none"/>
+                                <circle cx="50" cy="50" r="3" fill="currentColor"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Invitation Salutation -->
+                    <p class="font-serif italic text-stone-700 text-xs md:text-base px-2 md:px-4">
+                        With divine blessings of the Almighty, we cordially invite you to celebrate the union of pure love, devotion, and royal heritage.
+                    </p>
+
+                    <!-- Groom & Bride Names -->
+                    <div class="py-1">
+                        <h2 class="font-royal text-xl md:text-4xl lg:text-5xl text-royal-maroon tracking-wider font-extrabold leading-tight">
+                            SHRI KRISHNA
+                        </h2>
+                        <div class="flex items-center justify-center my-1 md:my-2 gap-3 md:gap-4">
+                            <span class="h-[1px] w-8 md:w-20 bg-royal-gold"></span>
+                            <span class="font-cursive text-2xl md:text-5xl text-royal-gold font-bold">weds</span>
+                            <span class="h-[1px] w-8 md:w-20 bg-royal-gold"></span>
+                        </div>
+                        <h2 class="font-royal text-xl md:text-4xl lg:text-5xl text-royal-maroon tracking-wider font-extrabold leading-tight">
+                            SHRI GAY
+                        </h2>
+                    </div>
+
+                    <div class="space-y-1.5 md:space-y-2">
+                        <p class="font-serif text-stone-800 text-sm md:text-xl tracking-wide">
+                            Thursday, 12th November 2026
+                        </p>
+                        <p class="font-sans text-[10px] md:text-sm text-royal-gold/90 bg-royal-maroon text-white px-3 py-1.5 rounded-full inline-block font-semibold uppercase tracking-widest">
+                            <i class="fas fa-map-marker-alt mr-1"></i> Navi Mumbai, Maharashtra, India
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Open Invitation Button -->
+                <div class="mt-4">
+                    <button id="open-card-btn" class="px-5 py-2.5 md:px-8 md:py-3.5 bg-royal-maroon hover:bg-royal-red text-white border-2 border-royal-gold rounded-full font-serif text-xs md:text-sm tracking-widest uppercase hover:scale-105 active:scale-95 transition-all shadow-lg flex items-center gap-2 md:gap-3 mx-auto">
+                        <span>Enter Royal Palace</span>
+                        <i class="fas fa-scroll animate-pulse"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <nav id="royal-nav" class="fixed top-0 inset-x-0 bg-royal-dark/95 border-b border-royal-gold/30 z-40 py-3 md:py-4 px-4 md:px-12 backdrop-blur-md flex justify-between items-center transform -translate-y-full transition-transform duration-700">
+        <a href="#" class="font-royal text-base md:text-2xl text-royal-gold font-bold tracking-widest glow-gold">
+            K <span class="font-cursive text-xl md:text-2xl text-white">&</span> G
+        </a>
+        
+        <!-- Desktop Nav Items -->
+        <div class="hidden lg:flex items-center gap-6 xl:gap-8 font-serif text-xs tracking-widest text-gold-200">
+            <a href="#welcome" class="hover:text-royal-gold transition-colors">WELCOME</a>
+            <a href="#couple" class="hover:text-royal-gold transition-colors">THE COUPLE</a>
+            <a href="#events" class="hover:text-royal-gold transition-colors">EVENTS</a>
+            <a href="#timeline" class="hover:text-royal-gold transition-colors">OUR STORY</a>
+            <a href="#gallery" class="hover:text-royal-gold transition-colors">GALLERY</a>
+            <a href="#rsvp" class="hover:text-royal-gold transition-colors">RSVP</a>
+            <a href="#blessings" class="hover:text-royal-gold transition-colors">BLESSINGS</a>
+        </div>
+
+        <div class="flex items-center gap-3 md:gap-4">
+            <a href="#rsvp" class="hidden sm:inline-block px-4 py-2 bg-royal-gold hover:bg-gold-400 text-royal-dark rounded-full font-serif text-xs tracking-widest transition-all hover:scale-105">RSVP NOW</a>
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="lg:hidden text-royal-gold text-xl md:text-2xl p-1 focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="fixed inset-0 bg-royal-dark/98 z-45 transform translate-x-full transition-transform duration-500 flex flex-col justify-center items-center gap-5 md:gap-6 font-serif text-base md:text-lg tracking-widest text-gold-100">
+        <button id="mobile-close-btn" class="absolute top-6 right-6 text-royal-gold text-2xl md:text-3xl p-2">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="#welcome" class="hover:text-royal-gold py-1.5" onclick="toggleMobileMenu()">WELCOME</a>
+        <a href="#couple" class="hover:text-royal-gold py-1.5" onclick="toggleMobileMenu()">THE COUPLE</a>
+        <a href="#events" class="hover:text-royal-gold py-1.5" onclick="toggleMobileMenu()">EVENTS</a>
+        <a href="#timeline" class="hover:text-royal-gold py-1.5" onclick="toggleMobileMenu()">OUR STORY</a>
+        <a href="#gallery" class="hover:text-royal-gold py-1.5" onclick="toggleMobileMenu()">GALLERY</a>
+        <a href="#rsvp" class="hover:text-royal-gold py-1.5" onclick="toggleMobileMenu()">RSVP</a>
+        <a href="#blessings" class="hover:text-royal-gold py-1.5" onclick="toggleMobileMenu()">BLESSINGS</a>
+        <a href="#rsvp" class="mt-2 px-6 py-2.5 bg-royal-gold text-royal-dark rounded-full font-serif text-xs md:text-sm tracking-widest hover:scale-105 transition-transform" onclick="toggleMobileMenu()">RSVP NOW</a>
+    </div>
+
+    <!-- MAIN BODY SECTIONS (Revealed after invitation gate opens) -->
+    <div id="main-content" class="opacity-0 transition-opacity duration-1000">
+
+        <!-- HERO SECTION: The Imperial Welcome Mandap -->
+        <header id="welcome" class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20 md:pt-24 pb-12 overflow-hidden">
+            <!-- Background Image Silhouette -->
+            <div class="absolute inset-0 z-0 bg-gradient-to-b from-royal-dark via-royal-maroon/40 to-royal-dark"></div>
+            <!-- Indian Mandap Arch overlay -->
+            <div class="absolute inset-0 z-0 mandap-arch opacity-40"></div>
+            
+            <!-- Ornate Hanging Lanterns -->
+            <div class="absolute top-0 left-4 md:left-10 w-10 h-32 md:w-12 md:h-48 border-b border-royal-gold opacity-50 flex flex-col justify-end items-center pb-2">
+                <i class="fas fa-lightbulb text-royal-gold text-lg md:text-xl animate-pulse"></i>
+            </div>
+            <div class="absolute top-0 right-4 md:right-10 w-10 h-44 md:w-12 md:h-64 border-b border-royal-gold opacity-50 flex flex-col justify-end items-center pb-2">
+                <i class="fas fa-lightbulb text-royal-gold text-lg md:text-xl animate-pulse"></i>
+            </div>
+
+            <div class="relative z-10 max-w-4xl space-y-4 md:space-y-8 mt-12 px-2">
+                <div class="flex justify-center">
+                    <span class="royal-border-gold px-4 py-1.5 md:px-6 md:py-2 rounded-full font-serif text-[10px] md:text-sm tracking-[0.2em] md:tracking-[0.25em] text-gold-300 bg-royal-maroon/80 inline-block uppercase">
+                        The Divine Wedding of
+                    </span>
+                </div>
+
+                <h1 class="font-royal text-2xl md:text-6xl lg:text-7xl tracking-wider text-gold-300 drop-shadow-xl glow-gold leading-tight">
+                    Shri Krishna
+                </h1>
+                <div class="flex items-center justify-center my-2 md:my-4 gap-4 md:gap-6">
+                    <span class="h-0.5 w-12 md:w-32 bg-royal-gold"></span>
+                    <span class="font-cursive text-3xl md:text-6xl text-white italic">and</span>
+                    <span class="h-0.5 w-12 md:w-32 bg-royal-gold"></span>
+                </div>
+                <h1 class="font-royal text-2xl md:text-6xl lg:text-7xl tracking-wider text-gold-300 drop-shadow-xl glow-gold leading-tight">
+                    Shri Gay
+                </h1>
+
+                <!-- Countdown Timer Block -->
+                <div class="py-4 md:py-8">
+                    <p class="font-serif text-xs md:text-sm tracking-widest text-gold-200/90 mb-3 md:mb-4 uppercase">Count with us to the Auspicious Hour</p>
+                    <div id="countdown" class="grid grid-cols-4 gap-2 md:gap-4 max-w-xl mx-auto">
+                        <div class="bg-royal-maroon/70 border border-royal-gold/30 rounded-xl p-2.5 md:p-4 backdrop-blur-sm">
+                            <span id="days" class="block font-royal text-xl md:text-4xl text-gold-300 font-bold">00</span>
+                            <span class="text-[9px] md:text-xs text-stone-300 uppercase tracking-widest">Days</span>
+                        </div>
+                        <div class="bg-royal-maroon/70 border border-royal-gold/30 rounded-xl p-2.5 md:p-4 backdrop-blur-sm">
+                            <span id="hours" class="block font-royal text-xl md:text-4xl text-gold-300 font-bold">00</span>
+                            <span class="text-[9px] md:text-xs text-stone-300 uppercase tracking-widest">Hours</span>
+                        </div>
+                        <div class="bg-royal-maroon/70 border border-royal-gold/30 rounded-xl p-2.5 md:p-4 backdrop-blur-sm">
+                            <span id="minutes" class="block font-royal text-xl md:text-4xl text-gold-300 font-bold">00</span>
+                            <span class="text-[9px] md:text-xs text-stone-300 uppercase tracking-widest">Mins</span>
+                        </div>
+                        <div class="bg-royal-maroon/70 border border-royal-gold/30 rounded-xl p-2.5 md:p-4 backdrop-blur-sm">
+                            <span id="seconds" class="block font-royal text-xl md:text-4xl text-gold-300 font-bold">00</span>
+                            <span class="text-[9px] md:text-xs text-stone-300 uppercase tracking-widest">Secs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Save the Date details -->
+                <div class="pt-2 md:pt-4 max-w-2xl mx-auto space-y-3 md:space-y-4">
+                    <p class="font-serif text-base md:text-xl text-gold-100">
+                        Thursday, November 12, 2026
+                    </p>
+                    <div class="flex items-center justify-center gap-2 text-stone-400 font-sans text-xs md:text-sm tracking-wider px-4">
+                        <i class="fas fa-map-marked-alt text-royal-gold flex-shrink-0"></i>
+                        <span class="text-stone-300 leading-snug">Grand Palace Resort, Palm Beach Rd, Navi Mumbai, India</span>
+                    </div>
+                    <div class="mt-6 md:mt-8 flex justify-center gap-4">
+                        <a href="#rsvp" class="px-6 py-2.5 md:px-8 md:py-3 bg-royal-gold hover:bg-gold-400 text-royal-dark font-semibold font-serif text-xs md:text-sm tracking-wider rounded-full shadow-lg hover:shadow-gold-500/20 transition-all hover:scale-105">
+                            <i class="fas fa-heart mr-1.5 animate-bounce"></i> RSVP & Blessings
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 text-center">
+                <p class="font-serif text-[10px] text-gold-300/80 tracking-widest mb-1 uppercase">Scroll To Explore</p>
+                <i class="fas fa-chevron-down text-royal-gold animate-bounce text-base"></i>
+            </div>
+        </header>
+
+        <!-- COUPLE INTRODUCTION SECTION -->
+        <section id="couple" class="relative py-16 md:py-24 px-4 md:px-12 bg-royal-dark/40 overflow-hidden">
+            <!-- Background Ornate Mandalas -->
+            <div class="absolute -right-32 top-12 w-64 h-64 md:w-96 md:h-96 border border-royal-gold/10 rounded-full flex items-center justify-center opacity-30">
+                <div class="w-48 h-48 md:w-80 md:h-80 border border-royal-gold/15 rounded-full"></div>
+            </div>
+            <div class="absolute -left-32 bottom-12 w-64 h-64 md:w-96 md:h-96 border border-royal-gold/10 rounded-full flex items-center justify-center opacity-30">
+                <div class="w-48 h-48 md:w-80 md:h-80 border border-royal-gold/15 rounded-full"></div>
+            </div>
+
+            <div class="max-w-6xl mx-auto relative z-10">
+                <div class="text-center mb-12 md:mb-16 space-y-2 md:space-y-4">
+                    <span class="font-cursive text-3xl md:text-4xl text-royal-gold">The Royalty of Our Hearts</span>
+                    <h2 class="font-royal text-xl md:text-4xl text-white tracking-widest uppercase">Shree Krishna & Srimati Gay</h2>
+                    <div class="w-20 h-0.5 bg-royal-gold mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-stretch">
+                    <!-- Groom Card -->
+                    <div class="royal-arch p-6 md:p-12 flex flex-col justify-between items-center text-center">
+                        <div class="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-royal-gold mb-4 md:mb-6 shadow-xl flex-shrink-0">
+                            <!-- Premium Fallback SVG representing Royal Groom -->
+                            <div class="absolute inset-0 bg-gradient-to-tr from-royal-maroon to-royal-red flex items-center justify-center">
+                                <svg class="w-24 h-24 md:w-28 md:h-28 text-royal-gold" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2L15 8L22 9L17 14L18.5 21L12 17L5.5 21L7 14L2 9L9 8L12 2Z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="space-y-3 md:space-y-4">
+                            <h3 class="font-royal text-xl md:text-2xl text-gold-300 tracking-wide font-bold">SHRI KRISHNA</h3>
+                            <span class="font-serif text-[10px] md:text-xs text-royal-gold/90 uppercase tracking-widest block">The Prince of Hearts</span>
+                            <div class="h-px w-12 bg-royal-gold/40 mx-auto"></div>
+                            <p class="font-serif text-xs md:text-sm text-stone-200 leading-relaxed italic px-2">
+                                "Born with natural grace, leading with devotion, commitment and a generous spirit. Excited to embark on this holy journey of togetherness with my beloved."
+                            </p>
+                        </div>
+                        <div class="mt-4 md:mt-6 flex gap-3">
+                            <span class="w-8 h-8 rounded-full bg-royal-gold/20 flex items-center justify-center text-royal-gold"><i class="fab fa-instagram"></i></span>
+                            <span class="w-8 h-8 rounded-full bg-royal-gold/20 flex items-center justify-center text-royal-gold"><i class="fab fa-facebook-f"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Bride Card -->
+                    <div class="royal-arch p-6 md:p-12 flex flex-col justify-between items-center text-center">
+                        <div class="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-royal-gold mb-4 md:mb-6 shadow-xl flex-shrink-0">
+                            <!-- Premium Fallback SVG representing Royal Bride -->
+                            <div class="absolute inset-0 bg-gradient-to-tr from-royal-maroon to-royal-red flex items-center justify-center">
+                                <svg class="w-24 h-24 md:w-28 md:h-28 text-royal-gold" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12,2C11.5,3.5 10.5,5.5 9,7C7.5,8.5 5.5,9.5 4,10C5.5,10.5 7.5,11.5 9,13C10.5,14.5 11.5,16.5 12,18C12.5,16.5 13.5,14.5 15,13C16.5,11.5 18.5,10.5 20,10C18.5,9.5 16.5,8.5 15,7C13.5,5.5 12.5,3.5 12,2Z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="space-y-3 md:space-y-4">
+                            <h3 class="font-royal text-xl md:text-2xl text-gold-300 tracking-wide font-bold">SHRI GAY</h3>
+                            <span class="font-serif text-[10px] md:text-xs text-royal-gold/90 uppercase tracking-widest block">The Enchanting Queen</span>
+                            <div class="h-px w-12 bg-royal-gold/40 mx-auto"></div>
+                            <p class="font-serif text-xs md:text-sm text-stone-200 leading-relaxed italic px-2">
+                                "Graceful like a lotus, caring like family, and the heartbeat of everyone she knows. Blessed with beautiful ideals and ready to walk this royal path of life with my love."
+                            </p>
+                        </div>
+                        <div class="mt-4 md:mt-6 flex gap-3">
+                            <span class="w-8 h-8 rounded-full bg-royal-gold/20 flex items-center justify-center text-royal-gold"><i class="fab fa-instagram"></i></span>
+                            <span class="w-8 h-8 rounded-full bg-royal-gold/20 flex items-center justify-center text-royal-gold"><i class="fab fa-facebook-f"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THE ROYAL WEDDING ITINERARY & EVENTS -->
+        <section id="events" class="relative py-16 md:py-24 px-4 md:px-12 bg-royal-dark">
+            <div class="absolute inset-0 bg-radial-gradient(circle, #3a030a 0%, #1c0205 100%) opacity-60"></div>
+            
+            <div class="max-w-6xl mx-auto relative z-10">
+                <div class="text-center mb-12 md:mb-16 space-y-2 md:space-y-4">
+                    <span class="font-cursive text-3xl md:text-4xl text-royal-gold">The Sacred Celebrations</span>
+                    <h2 class="font-royal text-xl md:text-4xl text-white tracking-widest uppercase">Wedding Event Details</h2>
+                    <div class="w-20 h-0.5 bg-royal-gold mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                    
+                    <!-- Event 1: Ganesh Puja -->
+                    <div class="royal-border-gold p-5 md:p-6 bg-[#320409] rounded-xl flex flex-col justify-between h-full hover:shadow-[0_0_20px_rgba(212,175,55,0.2)] transition-shadow">
+                        <div class="space-y-3 md:space-y-4">
+                            <div class="text-royal-gold text-3xl md:text-4xl text-center"><i class="fas fa-om"></i></div>
+                            <h3 class="font-royal text-base md:text-lg text-gold-300 text-center tracking-wider">Ganesh Puja</h3>
+                            <p class="text-stone-300 text-[10px] font-serif text-center uppercase tracking-widest bg-royal-maroon/60 py-1 rounded">Devotional Prayer</p>
+                            <p class="font-serif text-stone-300 text-xs text-center">To initiate our celebration with divine obstacle-removal blessings.</p>
+                            <div class="border-t border-royal-gold/20 pt-3 text-xs space-y-1 font-sans">
+                                <p class="text-gold-200"><i class="far fa-clock mr-1"></i> 09:00 AM onwards</p>
+                                <p class="text-stone-400"><i class="far fa-calendar-alt mr-1"></i> Nov 10, 2026</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 md:mt-6 text-center">
+                            <span class="text-[10px] bg-royal-gold text-royal-dark px-3 py-1 rounded-full uppercase tracking-wider font-semibold font-sans">Vaikunth Hall</span>
+                        </div>
+                    </div>
+
+                    <!-- Event 2: Sangeet & Mehendi -->
+                    <div class="royal-border-gold p-5 md:p-6 bg-[#320409] rounded-xl flex flex-col justify-between h-full hover:shadow-[0_0_20px_rgba(212,175,55,0.2)] transition-shadow">
+                        <div class="space-y-3 md:space-y-4">
+                            <div class="text-royal-gold text-3xl md:text-4xl text-center"><i class="fas fa-music"></i></div>
+                            <h3 class="font-royal text-base md:text-lg text-gold-300 text-center tracking-wider">Sangeet Beats</h3>
+                            <p class="text-stone-300 text-[10px] font-serif text-center uppercase tracking-widest bg-royal-maroon/60 py-1 rounded">Music & Henna night</p>
+                            <p class="font-serif text-stone-300 text-xs text-center">Dance your heart out to sweet musical beats and apply beautiful Mehendi designs.</p>
+                            <div class="border-t border-royal-gold/20 pt-3 text-xs space-y-1 font-sans">
+                                <p class="text-gold-200"><i class="far fa-clock mr-1"></i> 06:30 PM onwards</p>
+                                <p class="text-stone-400"><i class="far fa-calendar-alt mr-1"></i> Nov 11, 2026</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <span class="text-[10px] bg-royal-gold text-royal-dark px-3 py-1 rounded-full uppercase tracking-wider font-semibold font-sans">Vrindavan Ballroom</span>
+                        </div>
+                    </div>
+
+                    <!-- Event 3: The Royal Wedding -->
+                    <div class="royal-border-gold p-5 md:p-6 bg-[#4e070e] border-2 border-royal-gold/90 rounded-xl flex flex-col justify-between h-full hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] transform hover:scale-105 transition-all">
+                        <div class="space-y-3 md:space-y-4">
+                            <div class="text-royal-gold text-3xl md:text-4xl text-center"><i class="fas fa-ring animate-pulse"></i></div>
+                            <h3 class="font-royal text-lg md:text-xl text-gold-300 text-center tracking-wider font-extrabold">Shaadi</h3>
+                            <p class="text-royal-gold text-[10px] font-serif text-center uppercase tracking-widest bg-royal-maroon py-1 rounded">Main Wedding Ceremony</p>
+                            <p class="font-serif text-stone-200 text-xs text-center">Witness the sacred Phere, Sindoor rituals, and beautiful lifelong royal vows.</p>
+                            <div class="border-t border-royal-gold/40 pt-3 text-xs space-y-1 font-sans">
+                                <p class="text-gold-300 font-semibold"><i class="far fa-clock mr-1"></i> 05:00 PM (Auspicious Mahurat)</p>
+                                <p class="text-stone-200"><i class="far fa-calendar-alt mr-1"></i> Nov 12, 2026</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 md:mt-6 text-center">
+                            <span class="text-xs bg-royal-gold text-royal-dark px-4 py-1.5 rounded-full uppercase tracking-widest font-bold font-sans block">Imperial Mandap</span>
+                        </div>
+                    </div>
+
+                    <!-- Event 4: Royal Reception -->
+                    <div class="royal-border-gold p-5 md:p-6 bg-[#320409] rounded-xl flex flex-col justify-between h-full hover:shadow-[0_0_20px_rgba(212,175,55,0.2)] transition-shadow">
+                        <div class="space-y-3 md:space-y-4">
+                            <div class="text-royal-gold text-3xl md:text-4xl text-center"><i class="fas fa-wine-glass-alt"></i></div>
+                            <h3 class="font-royal text-base md:text-lg text-gold-300 text-center tracking-wider">Reception</h3>
+                            <p class="text-stone-300 text-[10px] font-serif text-center uppercase tracking-widest bg-royal-maroon/60 py-1 rounded">The Royal Feast</p>
+                            <p class="font-serif text-stone-300 text-xs text-center">Celebrate our union over grand dinner feast and toast to our eternal love journey.</p>
+                            <div class="border-t border-royal-gold/20 pt-3 text-xs space-y-1 font-sans">
+                                <p class="text-gold-200"><i class="far fa-clock mr-1"></i> 08:00 PM onwards</p>
+                                <p class="text-stone-400"><i class="far fa-calendar-alt mr-1"></i> Nov 13, 2026</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <span class="text-[10px] bg-royal-gold text-royal-dark px-3 py-1 rounded-full uppercase tracking-wider font-semibold font-sans">Raj Mahal Gardens</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- LOVE STORY TIMELINE (SMART RESPONSIVE DESIGN) -->
+        <section id="timeline" class="relative py-16 md:py-24 px-4 md:px-12 bg-royal-dark/90">
+            <div class="max-w-4xl mx-auto relative z-10">
+                <div class="text-center mb-12 md:mb-16 space-y-2 md:space-y-4">
+                    <span class="font-cursive text-3xl md:text-4xl text-royal-gold">The Journey of Two Hearts</span>
+                    <h2 class="font-royal text-xl md:text-4xl text-white tracking-widest uppercase">Our Love Story Timeline</h2>
+                    <div class="w-20 h-0.5 bg-royal-gold mx-auto"></div>
+                </div>
+
+                <!-- Timeline pathway vertical line (Repositioned for Mobile vs Desktop) -->
+                <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 md:-translate-x-1/2 top-32 bottom-12 w-0.5 bg-royal-gold/35"></div>
+
+                <div class="space-y-10 md:space-y-16 pl-6 md:pl-0">
+                    
+                    <!-- Milestone 1 -->
+                    <div class="relative flex flex-col md:flex-row items-start md:items-center justify-between">
+                        <!-- Left Aligned Point for Mobile, Alternating center for Desktop -->
+                        <div class="absolute left-[-18px] md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-royal-maroon border-2 border-royal-gold z-10 flex items-center justify-center text-xs text-royal-gold font-bold">
+                            1
+                        </div>
+                        <div class="w-full md:w-5/12 text-left md:text-right md:pr-8">
+                            <div class="bg-royal-maroon/60 p-5 md:p-6 rounded-xl border border-royal-gold/20 inline-block text-left w-full shadow-lg">
+                                <span class="font-serif text-[10px] text-royal-gold font-bold uppercase tracking-widest block mb-1">April 2023</span>
+                                <h4 class="font-royal text-base md:text-lg text-white mb-2 tracking-wide">The Blessed First Meeting</h4>
+                                <p class="font-serif text-xs text-stone-300 leading-relaxed">Introduced through a spiritual community gathering, their eyes locked and hearts instantly recognized each other with beautiful destiny.</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block w-5/12"></div>
+                    </div>
+
+                    <!-- Milestone 2 -->
+                    <div class="relative flex flex-col md:flex-row md:flex-row-reverse items-start md:items-center justify-between">
+                        <div class="absolute left-[-18px] md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-royal-maroon border-2 border-royal-gold z-10 flex items-center justify-center text-xs text-royal-gold font-bold">
+                            2
+                        </div>
+                        <div class="w-full md:w-5/12 text-left md:text-left md:pl-8">
+                            <div class="bg-royal-maroon/60 p-5 md:p-6 rounded-xl border border-royal-gold/20 inline-block text-left w-full shadow-lg">
+                                <span class="font-serif text-[10px] text-royal-gold font-bold uppercase tracking-widest block mb-1">December 2024</span>
+                                <h4 class="font-royal text-base md:text-lg text-white mb-2 tracking-wide">The Beautiful Acceptance</h4>
+                                <p class="font-serif text-xs text-stone-300 leading-relaxed">Over warm cups of tea and spiritual conversation in the cool air, Shri Krishna popped the grand proposal. Shri Gay accepted with tears of absolute joy.</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block w-5/12"></div>
+                    </div>
+
+                    <!-- Milestone 3 -->
+                    <div class="relative flex flex-col md:flex-row items-start md:items-center justify-between">
+                        <div class="absolute left-[-18px] md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-royal-maroon border-2 border-royal-gold z-10 flex items-center justify-center text-xs text-royal-gold font-bold">
+                            3
+                        </div>
+                        <div class="w-full md:w-5/12 text-left md:text-right md:pr-8">
+                            <div class="bg-royal-maroon/60 p-5 md:p-6 rounded-xl border border-royal-gold/20 inline-block text-left w-full shadow-lg">
+                                <span class="font-serif text-[10px] text-royal-gold font-bold uppercase tracking-widest block mb-1">March 2025</span>
+                                <h4 class="font-royal text-base md:text-lg text-white mb-2 tracking-wide">The Royal Roka</h4>
+                                <p class="font-serif text-xs text-stone-300 leading-relaxed">Both families met in beautiful Mumbai, exchanging auspicious traditional sweets, fine silk garments, and joyful blessings to declare their path of union.</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block w-5/12"></div>
+                    </div>
+
+                    <!-- Milestone 4 -->
+                    <div class="relative flex flex-col md:flex-row md:flex-row-reverse items-start md:items-center justify-between">
+                        <div class="absolute left-[-18px] md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-royal-gold text-royal-dark border-2 border-white z-10 flex items-center justify-center text-xs font-bold shadow-lg">
+                            <i class="fas fa-heart animate-ping absolute opacity-70"></i>
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="w-full md:w-5/12 text-left md:text-left md:pl-8">
+                            <div class="bg-royal-maroon/60 p-5 md:p-6 rounded-xl border border-royal-gold/20 inline-block text-left w-full shadow-lg">
+                                <span class="font-serif text-[10px] text-royal-gold font-bold uppercase tracking-widest block mb-1">November 2026</span>
+                                <h4 class="font-royal text-base md:text-lg text-white mb-2 tracking-wide">The Eternal Seven Vows</h4>
+                                <p class="font-serif text-xs text-stone-300 leading-relaxed">The supreme culmination of friendship, trust, and ultimate devotion. Shri Krishna & Shri Gay tie their life bonds under the sacred fire.</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block w-5/12"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VENUE & MAP LOCATION SECTION -->
+        <section id="venue" class="relative py-16 md:py-24 px-4 md:px-12 bg-royal-dark/80">
+            <div class="max-w-6xl mx-auto relative z-10">
+                <div class="text-center mb-12 md:mb-16 space-y-2 md:space-y-4">
+                    <span class="font-cursive text-3xl md:text-4xl text-royal-gold">The Grand Destination</span>
+                    <h2 class="font-royal text-xl md:text-4xl text-white tracking-widest uppercase">The Wedding Venue</h2>
+                    <div class="w-20 h-0.5 bg-royal-gold mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <!-- Venue Details Text block -->
+                    <div class="space-y-4 md:space-y-6 bg-royal-maroon/40 p-6 md:p-8 rounded-2xl border border-royal-gold/30">
+                        <h3 class="font-royal text-xl md:text-2xl text-gold-300 tracking-wide">Grand Palace Resort</h3>
+                        <p class="font-serif text-stone-200 text-xs md:text-sm leading-relaxed">
+                            A majestic, premium palatial resort situated along the magnificent Palm Beach waterfront corridor of Navi Mumbai. Inspired by royal Rajasthani architecture, the resort offers sweeping landscape views and premium luxurious ballrooms.
+                        </p>
+                        
+                        <div class="space-y-3 font-serif text-xs md:text-sm">
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-map-marker-alt text-royal-gold mt-1 text-base md:text-lg flex-shrink-0"></i>
+                                <span class="leading-snug text-stone-300">Plot No. 128, Palm Beach Road, Sector 15, Belapur, Navi Mumbai, Maharashtra 400614, India</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-phone-alt text-royal-gold flex-shrink-0"></i>
+                                <span class="text-stone-300">+91 22 9876 5432</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-envelope text-royal-gold flex-shrink-0"></i>
+                                <span class="text-stone-300">hospitality@royalweddingkg.com</span>
+                            </div>
+                        </div>
+
+                        <!-- Directions Guidelines block -->
+                        <div class="border-t border-royal-gold/20 pt-4">
+                            <h4 class="font-royal text-xs md:text-sm text-gold-200 tracking-wider mb-2 uppercase">Travel Guidelines</h4>
+                            <ul class="list-disc list-inside text-[11px] md:text-xs text-stone-400 space-y-1.5 font-sans leading-relaxed">
+                                <li>Located 45 minutes drive from Chhatrapati Shivaji Maharaj International Airport.</li>
+                                <li>Nearest Train Junction is Belapur CBD Railway Station (2.5 km away).</li>
+                                <li>Ample secure valet parking is arranged inside the resort grounds.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Embed Responsive Google Map Fallback Map Container -->
+                    <div class="royal-border-gold rounded-xl overflow-hidden shadow-2xl h-[280px] md:h-[450px] relative bg-royal-maroon flex flex-col justify-center items-center p-6 text-center">
+                        <!-- Premium Elegant Fallback Content behind Map iframe (Always visible if iframe is blocked by Sandboxed Preview environments) -->
+                        <div class="absolute inset-0 opacity-10 pointer-events-none flex items-center justify-center">
+                            <!-- Golden Mandala Art -->
+                            <svg class="w-80 h-80 fill-current text-royal-gold" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="0.5" fill="none"/>
+                                <circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="0.5" fill="none"/>
+                                <circle cx="50" cy="50" r="20" stroke="currentColor" stroke-width="0.5" fill="none"/>
+                                <path d="M50,0 L50,100 M0,50 L100,50" stroke="currentColor" stroke-width="0.5"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- Real-time loading iframe with standard parameters that work across all sandbox systems -->
+                        <iframe 
+                            src="https://maps.google.com/maps?q=Grand%20Palace%20Resort,%20Palm%20Beach%20Road,%20Sector%2015,%20Belapur,%20Navi%20Mumbai&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                            class="absolute inset-0 w-full h-full border-0 z-10" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+
+                        <!-- Luxury Action Overlay (In case browser sandboxes block iframe embeds completely) -->
+                        <div class="relative z-0 flex flex-col items-center justify-center space-y-4">
+                            <div class="w-16 h-16 rounded-full bg-royal-maroon border-2 border-royal-gold flex items-center justify-center text-royal-gold text-2xl shadow-xl animate-pulse">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <h4 class="font-royal text-base text-gold-300 tracking-wider">Grand Palace Resort</h4>
+                            <p class="font-serif text-stone-300 text-xs max-w-xs">Palm Beach Road, Sector 15, Belapur, Navi Mumbai</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Grand+Palace+Resort+Palm+Beach+Road+Sector+15+Belapur+Navi+Mumbai" 
+                               target="_blank" 
+                               class="px-6 py-2.5 bg-royal-gold text-royal-dark font-serif font-bold text-xs tracking-widest uppercase rounded-full shadow-lg hover:bg-gold-400 hover:scale-105 active:scale-95 transition-all inline-flex items-center gap-2 relative z-20">
+                                <i class="fas fa-location-arrow"></i> Google Maps App Me Kholein
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WEDDING PHOTO GALLERY -->
+        <section id="gallery" class="relative py-16 md:py-24 px-4 md:px-12 bg-royal-dark/95">
+            <div class="max-w-6xl mx-auto relative z-10">
+                <div class="text-center mb-12 md:mb-16 space-y-2 md:space-y-4">
+                    <span class="font-cursive text-3xl md:text-4xl text-royal-gold">Moments of Splendor</span>
+                    <h2 class="font-royal text-xl md:text-4xl text-white tracking-widest uppercase">The Royal Gallery</h2>
+                    <div class="w-20 h-0.5 bg-royal-gold mx-auto"></div>
+                </div>
+
+                <!-- Gallery Grid containing stunning placeholders / Indian motifs with luxury hover features -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Item 1 -->
+                    <div class="group relative royal-border-gold overflow-hidden rounded-xl h-64 md:h-80 bg-royal-maroon/50 cursor-pointer">
+                        <div class="absolute inset-0 bg-gradient-to-t from-royal-dark via-transparent to-transparent z-10 opacity-70 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute inset-0 flex items-center justify-center p-8 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:20px_20px] group-hover:scale-110 transition-transform duration-500">
+                            <i class="fas fa-gem text-gold-300 text-5xl md:text-6xl opacity-30 group-hover:opacity-60 transition-opacity"></i>
+                        </div>
+                        <div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20">
+                            <span class="font-serif text-[10px] md:text-xs text-royal-gold tracking-widest uppercase block mb-0.5">Pre-Wedding Shoots</span>
+                            <h4 class="font-royal text-base md:text-lg text-white tracking-wide">Forts of Jaipur</h4>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="group relative royal-border-gold overflow-hidden rounded-xl h-64 md:h-80 bg-royal-maroon/50 cursor-pointer">
+                        <div class="absolute inset-0 bg-gradient-to-t from-royal-dark via-transparent to-transparent z-10 opacity-70 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute inset-0 flex items-center justify-center p-8 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:20px_20px] group-hover:scale-110 transition-transform duration-500">
+                            <i class="fas fa-heart text-gold-300 text-5xl md:text-6xl opacity-30 group-hover:opacity-60 transition-opacity"></i>
+                        </div>
+                        <div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20">
+                            <span class="font-serif text-[10px] md:text-xs text-royal-gold tracking-widest uppercase block mb-0.5">Traditions</span>
+                            <h4 class="font-royal text-base md:text-lg text-white tracking-wide">Sacred Puja Ceremony</h4>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="group relative royal-border-gold overflow-hidden rounded-xl h-64 md:h-80 bg-royal-maroon/50 cursor-pointer">
+                        <div class="absolute inset-0 bg-gradient-to-t from-royal-dark via-transparent to-transparent z-10 opacity-70 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute inset-0 flex items-center justify-center p-8 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:20px_20px] group-hover:scale-110 transition-transform duration-500">
+                            <i class="fas fa-fan text-gold-300 text-5xl md:text-6xl opacity-30 group-hover:opacity-60 transition-opacity"></i>
+                        </div>
+                        <div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20">
+                            <span class="font-serif text-[10px] md:text-xs text-royal-gold tracking-widest uppercase block mb-0.5">Festivity</span>
+                            <h4 class="font-royal text-base md:text-lg text-white tracking-wide">The Colors of Henna</h4>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="group relative royal-border-gold overflow-hidden rounded-xl h-64 md:h-80 bg-royal-maroon/50 cursor-pointer">
+                        <div class="absolute inset-0 bg-gradient-to-t from-royal-dark via-transparent to-transparent z-10 opacity-70 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute inset-0 flex items-center justify-center p-8 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:20px_20px] group-hover:scale-110 transition-transform duration-500">
+                            <i class="fas fa-hand-holding-heart text-gold-300 text-5xl md:text-6xl opacity-30 group-hover:opacity-60 transition-opacity"></i>
+                        </div>
+                        <div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20">
+                            <span class="font-serif text-[10px] md:text-xs text-royal-gold tracking-widest uppercase block mb-0.5">The Vows</span>
+                            <h4 class="font-royal text-base md:text-lg text-white tracking-wide">Saptapadi Promise</h4>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="group relative royal-border-gold overflow-hidden rounded-xl h-64 md:h-80 bg-royal-maroon/50 cursor-pointer">
+                        <div class="absolute inset-0 bg-gradient-to-t from-royal-dark via-transparent to-transparent z-10 opacity-70 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute inset-0 flex items-center justify-center p-8 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:20px_20px] group-hover:scale-110 transition-transform duration-500">
+                            <i class="fas fa-wine-glass text-gold-300 text-5xl md:text-6xl opacity-30 group-hover:opacity-60 transition-opacity"></i>
+                        </div>
+                        <div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20">
+                            <span class="font-serif text-[10px] md:text-xs text-royal-gold tracking-widest uppercase block mb-0.5">Gala Feast</span>
+                            <h4 class="font-royal text-base md:text-lg text-white tracking-wide">The Royal Reception</h4>
+                        </div>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="group relative royal-border-gold overflow-hidden rounded-xl h-64 md:h-80 bg-royal-maroon/50 cursor-pointer">
+                        <div class="absolute inset-0 bg-gradient-to-t from-royal-dark via-transparent to-transparent z-10 opacity-70 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute inset-0 flex items-center justify-center p-8 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:20px_20px] group-hover:scale-110 transition-transform duration-500">
+                            <i class="fas fa-crown text-gold-300 text-5xl md:text-6xl opacity-30 group-hover:opacity-60 transition-opacity"></i>
+                        </div>
+                        <div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20">
+                            <span class="font-serif text-[10px] md:text-xs text-royal-gold tracking-widest uppercase block mb-0.5">Love Journey</span>
+                            <h4 class="font-royal text-base md:text-lg text-white tracking-wide">Tale of Forever</h4>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FAMILY SECTION (Blessings from elders) -->
+        <section id="family" class="relative py-16 md:py-24 px-4 md:px-12 bg-royal-dark/90">
+            <div class="max-w-6xl mx-auto relative z-10">
+                <div class="text-center mb-12 md:mb-16 space-y-2 md:space-y-4">
+                    <span class="font-cursive text-3xl md:text-4xl text-royal-gold">The Pillars of Strength</span>
+                    <h2 class="font-royal text-xl md:text-4xl text-white tracking-widest uppercase">Beloved Family</h2>
+                    <div class="w-20 h-0.5 bg-royal-gold mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                    
+                    <!-- Groom's Side Parents -->
+                    <div class="bg-royal-maroon/40 border border-royal-gold/20 p-6 md:p-8 rounded-2xl text-center">
+                        <h3 class="font-royal text-lg md:text-xl text-gold-300 tracking-wider mb-4 md:mb-6 leading-tight">With Best Compliments from Groom's Side</h3>
+                        <div class="space-y-4 font-serif">
+                            <div>
+                                <p class="text-stone-300 text-[10px] md:text-xs uppercase tracking-widest block mb-0.5">Proud Parents</p>
+                                <p class="text-base md:text-lg text-white font-bold">Shri Devendra Kumar & Smt. Radha Devi</p>
+                            </div>
+                            <div class="w-12 h-px bg-royal-gold/30 mx-auto my-3"></div>
+                            <div>
+                                <p class="text-stone-300 text-[10px] md:text-xs uppercase tracking-widest block mb-0.5">Grandparents</p>
+                                <p class="text-stone-100 text-sm md:text-base font-medium">Late Shri Madan Lal Ji & Smt. Savitri Devi</p>
+                            </div>
+                            <div class="w-12 h-px bg-royal-gold/30 mx-auto my-3"></div>
+                            <div>
+                                <p class="text-stone-300 text-[10px] md:text-xs uppercase tracking-widest block mb-0.5">Uncles & Aunts</p>
+                                <p class="text-xs text-stone-300 leading-relaxed">Shri Vinay Kumar, Smt. Preeti Devi, Shri Shailesh Kumar, Smt. Ritu Devi</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bride's Side Parents -->
+                    <div class="bg-royal-maroon/40 border border-royal-gold/20 p-6 md:p-8 rounded-2xl text-center">
+                        <h3 class="font-royal text-lg md:text-xl text-gold-300 tracking-wider mb-4 md:mb-6 leading-tight">With Best Compliments from Bride's Side</h3>
+                        <div class="space-y-4 font-serif">
+                            <div>
+                                <p class="text-stone-300 text-[10px] md:text-xs uppercase tracking-widest block mb-0.5">Proud Parents</p>
+                                <p class="text-base md:text-lg text-white font-bold">Shri Rajesh Sharma & Smt. Meena Sharma</p>
+                            </div>
+                            <div class="w-12 h-px bg-royal-gold/30 mx-auto my-3"></div>
+                            <div>
+                                <p class="text-stone-300 text-[10px] md:text-xs uppercase tracking-widest block mb-0.5">Grandparents</p>
+                                <p class="text-stone-100 text-sm md:text-base font-medium">Shri Rameshwar Prasad & Smt. Kausalya Devi</p>
+                            </div>
+                            <div class="w-12 h-px bg-royal-gold/30 mx-auto my-3"></div>
+                            <div>
+                                <p class="text-stone-300 text-[10px] md:text-xs uppercase tracking-widest block mb-0.5">Uncles & Aunts</p>
+                                <p class="text-xs text-stone-300 leading-relaxed">Shri Manoj Sharma, Smt. Suman Sharma, Shri Ashok Sharma, Smt. Bindu Sharma</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP & GUEST ATTENDANCE FORM -->
+        <section id="rsvp" class="relative py-16 md:py-24 px-4 md:px-12 bg-royal-dark">
+            <div class="absolute inset-0 bg-radial-gradient(circle, #3a030a 0%, #1c0205 100%) opacity-50"></div>
+            
+            <div class="max-w-4xl mx-auto relative z-10">
+                <div class="text-center mb-10 md:mb-12 space-y-2 md:space-y-4">
+                    <span class="font-cursive text-3xl md:text-4xl text-royal-gold">R.S.V.P</span>
+                    <h2 class="font-royal text-xl md:text-4xl text-white tracking-widest uppercase">Are You Attending?</h2>
+                    <p class="font-serif text-xs text-stone-300 tracking-widest max-w-xl mx-auto leading-relaxed">Kindly respond before November 1st, 2026 to help us prepare the Royal Palace arrangements.</p>
+                    <div class="w-20 h-0.5 bg-royal-gold mx-auto"></div>
+                </div>
+
+                <div class="royal-border-gold bg-[#2d0408] p-5 md:p-12 rounded-2xl shadow-2xl">
+                    <form id="rsvp-form" class="space-y-5 md:space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <!-- Input Full Name (Text sizes to 16px on mobile prevents auto zoom) -->
+                            <div class="space-y-1.5">
+                                <label for="fullname" class="font-serif text-[10px] md:text-xs text-gold-300 uppercase tracking-widest block font-bold">Full Name</label>
+                                <input type="text" id="fullname" name="fullname" required 
+                                    class="w-full bg-royal-dark/80 border border-royal-gold/30 rounded-lg px-4 py-3 text-stone-100 focus:outline-none focus:border-royal-gold transition-colors font-sans text-base md:text-sm"
+                                    placeholder="Enter your full name">
+                            </div>
+                            <!-- Input Email -->
+                            <div class="space-y-1.5">
+                                <label for="email" class="font-serif text-[10px] md:text-xs text-gold-300 uppercase tracking-widest block font-bold">Email Address</label>
+                                <input type="email" id="email" name="email" required 
+                                    class="w-full bg-royal-dark/80 border border-royal-gold/30 rounded-lg px-4 py-3 text-stone-100 focus:outline-none focus:border-royal-gold transition-colors font-sans text-base md:text-sm"
+                                    placeholder="yourname@domain.com">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                            <!-- Number of guests -->
+                            <div class="space-y-1.5">
+                                <label for="guests" class="font-serif text-[10px] md:text-xs text-gold-300 uppercase tracking-widest block font-bold">Number of Guests</label>
+                                <select id="guests" name="guests" 
+                                    class="w-full bg-royal-dark/80 border border-royal-gold/30 rounded-lg px-4 py-3 text-stone-100 focus:outline-none focus:border-royal-gold transition-colors font-sans text-base md:text-sm">
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 Persons</option>
+                                    <option value="3">3 Persons</option>
+                                    <option value="4">4 Persons</option>
+                                    <option value="5">5+ Persons</option>
+                                </select>
+                            </div>
+                            <!-- Attendance Choice -->
+                            <div class="space-y-1.5">
+                                <label class="font-serif text-[10px] md:text-xs text-gold-300 uppercase tracking-widest block font-bold">Will You Attend?</label>
+                                <div class="flex gap-4 pt-2">
+                                    <label class="flex items-center gap-2 cursor-pointer text-xs md:text-sm">
+                                        <input type="radio" name="attendance" value="yes" checked class="accent-royal-gold w-4 h-4">
+                                        <span>Yes, absolutely!</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer text-xs md:text-sm">
+                                        <input type="radio" name="attendance" value="no" class="accent-royal-gold w-4 h-4">
+                                        <span>Regretfully, No</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- Event selection -->
+                            <div class="space-y-1.5">
+                                <label for="events-select" class="font-serif text-[10px] md:text-xs text-gold-300 uppercase tracking-widest block font-bold">Attending Events</label>
+                                <select id="events-select" name="events_select" 
+                                    class="w-full bg-royal-dark/80 border border-royal-gold/30 rounded-lg px-4 py-3 text-stone-100 focus:outline-none focus:border-royal-gold transition-colors font-sans text-base md:text-sm">
+                                    <option value="all">All Events (Nov 10-13)</option>
+                                    <option value="only-wedding">Only Royal Wedding (Nov 12)</option>
+                                    <option value="wedding-reception">Wedding & Reception (Nov 12-13)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Special requirements / Dietary -->
+                        <div class="space-y-1.5">
+                            <label for="notes" class="font-serif text-[10px] md:text-xs text-gold-300 uppercase tracking-widest block font-bold">Any Special Wishes or dietary notes</label>
+                            <textarea id="notes" name="notes" rows="3" 
+                                class="w-full bg-royal-dark/80 border border-royal-gold/30 rounded-lg px-4 py-3 text-stone-100 focus:outline-none focus:border-royal-gold transition-colors font-sans text-base md:text-sm"
+                                placeholder="E.g., Looking forward to it! / Pure Jain Vegetarian requirements..."></textarea>
+                        </div>
+
+                        <!-- Submit button -->
+                        <div class="text-center pt-2">
+                            <button type="submit" class="w-full sm:w-auto px-10 py-4 bg-royal-gold hover:bg-gold-400 text-royal-dark font-serif font-bold text-xs md:text-sm tracking-widest uppercase rounded-full shadow-lg transition-transform hover:scale-105 active:scale-95">
+                                Send RSVP Confirmation
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <!-- RSVP Success Overlay (Hidden initially) -->
+                    <div id="rsvp-success" class="hidden text-center py-8 space-y-4">
+                        <div class="text-royal-gold text-5xl"><i class="fas fa-check-circle animate-bounce"></i></div>
+                        <h3 class="font-royal text-xl md:text-2xl text-gold-300">RSVP Received with Grace!</h3>
+                        <p class="font-serif text-xs md:text-sm text-stone-300 px-2 md:px-6 leading-relaxed">Thank you for confirming your presence. The royal guards will reserve your luxury table at the palace resort. We look forward to your gracious company!</p>
+                        <button onclick="resetRSVPForm()" class="px-6 py-2 border border-royal-gold text-royal-gold rounded-full text-[10px] font-serif tracking-widest uppercase hover:bg-royal-gold/10">Submit Another RSVP</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLESSINGS WALL / DIGITAL SHAGUN GUESTBOOK -->
+        <section id="blessings" class="relative py-16 md:py-24 px-4 md:px-12 bg-royal-dark/95">
+            <div class="max-w-5xl mx-auto relative z-10">
+                <div class="text-center mb-12 md:mb-16 space-y-2 md:space-y-4">
+                    <span class="font-cursive text-3xl md:text-4xl text-royal-gold">Send Your Shagun</span>
+                    <h2 class="font-royal text-xl md:text-4xl text-white tracking-widest uppercase">Digital Blessings Wall</h2>
+                    <p class="font-serif text-xs text-stone-300 tracking-widest max-w-xl mx-auto leading-relaxed">Pen down your precious blessings, warm prayers, or beautiful wishes for Shri Krishna & Shri Gay.</p>
+                    <div class="w-20 h-0.5 bg-royal-gold mx-auto"></div>
+                </div>
+
+                <!-- Input section to write blessings -->
+                <div class="bg-royal-maroon/40 border border-royal-gold/20 p-5 md:p-8 rounded-2xl mb-10 md:mb-12">
+                    <h3 class="font-royal text-base md:text-lg text-gold-300 tracking-wider mb-4"><i class="fas fa-feather-alt mr-2"></i>Write a Blessing Card</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <input type="text" id="blessing-name" placeholder="Your Name" 
+                            class="bg-royal-dark/60 border border-royal-gold/20 rounded-lg px-4 py-3 text-stone-100 focus:outline-none focus:border-royal-gold text-base md:text-sm font-sans md:col-span-1">
+                        <input type="text" id="blessing-text" placeholder="May your marriage be blessed with eternal happiness and divine grace..." 
+                            class="bg-royal-dark/60 border border-royal-gold/20 rounded-lg px-4 py-3 text-stone-100 focus:outline-none focus:border-royal-gold text-base md:text-sm font-sans md:col-span-2">
+                    </div>
+                    <div class="text-right mt-4">
+                        <button id="post-blessing-btn" class="w-full sm:w-auto px-6 py-2.5 bg-royal-gold text-royal-dark font-serif font-bold text-xs tracking-widest uppercase rounded-full hover:bg-gold-400 hover:scale-105 transition-all">
+                            Post to Blessings Wall
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Scrollable Wall Cards list -->
+                <div id="blessings-wall" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Dynamic/Sample Cards will load here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER: Sacred Shlokas & Gratitude -->
+        <footer class="relative py-12 md:py-16 bg-royal-dark border-t border-royal-gold/20 text-center px-4">
+            <div class="max-w-4xl mx-auto space-y-6">
+                <!-- Auspicious Shloka -->
+                <div class="py-4 font-serif text-xs md:text-sm text-gold-300 tracking-wider max-w-xl mx-auto leading-relaxed border-y border-royal-gold/20 px-2">
+                    <p class="italic">"मङ्गलम् भगवान् विष्णुः मङ्गलम् गरुडध्वजः।"</p>
+                    <p class="italic">"मङ्गलम् पुण्डरीकाक्षः मङ्गलाय तनो हरिः॥"</p>
+                    <p class="text-[9px] md:text-[10px] text-stone-400 mt-2 uppercase tracking-widest leading-relaxed">May divine auspiciousness bless this union eternally</p>
+                </div>
+
+                <h3 class="font-royal text-lg md:text-xl tracking-widest text-white mt-6">
+                    SHRI KRISHNA <span class="font-cursive text-2xl text-royal-gold">and</span> SHRI GAY
+                </h3>
+                
+                <p class="font-serif text-xs text-stone-400 max-w-lg mx-auto leading-relaxed">
+                    We thank you from the bottom of our hearts for visiting our wedding registry. Your warm prayers and presence are the absolute best gifts we could ask for.
+                </p>
+
+                <p class="text-[9px] md:text-[10px] text-stone-500 font-sans tracking-widest uppercase">
+                    © 2026 Krishna & Gay Wedding Invitation. Crafted with Luxury aesthetics for a beautiful lifetime union.
+                </p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Script logic for Opening Card, Audio Playback, Timer, RSVP, Blessings, Particle animation -->
+    <script>
+        // Set Wedding Date: November 12, 2026
+        const weddingDate = new Date("November 12, 2026 17:00:00").getTime();
+
+        // Sample initial blessings
+        let blessingsList = [
+            { name: "Acharya Dev", text: "Wishing both of you a wonderful lifetime journey in divine bliss, deep wisdom, and beautiful mutual joy!" },
+            { name: "Anjali & Rahul", text: "Sincere congratulations on this royal union! You make an absolute stunning couple. Jai Shree Krishna!" },
+            { name: "Pandit Suresh Shastri", text: "May the divine grace of Shri Krishna always brighten your marriage and guide your families." }
+        ];
+
+        // Particle System: Realistic Rose Petals and Gold Sparkles
+        function createAmbientParticles() {
+            const container = document.getElementById('ambient-container');
+            if (!container) return;
+            
+            // Limit floating elements on smaller screens to optimize performance and prevent lag on old smartphones
+            const maxProb = window.innerWidth < 768 ? 0.08 : 0.2;
+            
+            // Create a petal
+            if (Math.random() < maxProb) {
+                const petal = document.createElement('div');
+                petal.classList.add('petal');
+                petal.style.left = Math.random() * 100 + 'vw';
+                petal.style.width = Math.random() * (window.innerWidth < 768 ? 8 : 15) + 8 + 'px';
+                petal.style.height = Math.random() * (window.innerWidth < 768 ? 8 : 15) + 8 + 'px';
+                petal.style.animationDuration = Math.random() * 8 + 6 + 's';
+                petal.style.animationDelay = '0s';
+                
+                // Varied rose pink to red tones
+                const colorType = Math.floor(Math.random() * 3);
+                if (colorType === 0) {
+                    petal.style.background = 'radial-gradient(#ff6b8b, #e11d48)';
+                } else if (colorType === 1) {
+                    petal.style.background = 'radial-gradient(#ffccd5, #ff4d6d)';
+                } else {
+                    petal.style.background = 'radial-gradient(#ffe5ec, #ff758f)';
+                }
+                
+                container.appendChild(petal);
+                
+                // Cleanup after animated lifecycle
+                setTimeout(() => {
+                    petal.remove();
+                }, 14000);
+            }
+
+            // Create a golden sparkle
+            if (Math.random() < (maxProb + 0.1)) {
+                const sparkle = document.createElement('div');
+                sparkle.classList.add('gold-sparkle');
+                sparkle.style.left = Math.random() * 100 + 'vw';
+                const size = Math.random() * 5 + 3 + 'px';
+                sparkle.style.width = size;
+                sparkle.style.height = size;
+                sparkle.style.animationDuration = Math.random() * 5 + 4 + 's';
+                container.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 9000);
+            }
+        }
+
+        // Run Particle Generator
+        setInterval(createAmbientParticles, 250);
+
+        // Music Ambiance System (Simulated Shehnai / Sitar vibe)
+        let audioContext;
+        let mainOsc;
+        let harmonicOsc;
+        let isMusicPlaying = false;
+
+        function toggleMusic() {
+            const musicBtn = document.getElementById('music-btn');
+            const musicIcon = document.getElementById('music-icon');
+            const tooltip = document.getElementById('music-tooltip');
+
+            if (!audioContext) {
+                try {
+                    // Initialize audio context safely
+                    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                } catch (e) {
+                    console.warn("Audio Context not supported or blocked in this browser:", e);
+                    return;
+                }
+            }
+
+            // Resume context if suspended (crucial for browser autoplay restrictions)
+            if (audioContext && audioContext.state === 'suspended') {
+                audioContext.resume();
+            }
+
+            if (!isMusicPlaying && audioContext) {
+                try {
+                    // Start main tanpura-like drone oscillator
+                    mainOsc = audioContext.createOscillator();
+                    const mainGain = audioContext.createGain();
+                    
+                    mainOsc.type = 'triangle';
+                    // Tanpura Sa (C# frequency representing traditional Indian atmosphere)
+                    mainOsc.frequency.setValueAtTime(138.59, audioContext.currentTime); 
+                    mainGain.gain.setValueAtTime(0.04, audioContext.currentTime); // Soft ambient volume
+                    
+                    // Second sweet overtone oscillator (Pa) for authentic Indian sitar drone resonance
+                    harmonicOsc = audioContext.createOscillator();
+                    const harmonicGain = audioContext.createGain();
+                    
+                    harmonicOsc.type = 'sine';
+                    harmonicOsc.frequency.setValueAtTime(207.65, audioContext.currentTime); 
+                    harmonicGain.gain.setValueAtTime(0.015, audioContext.currentTime);
+                    
+                    // Connect nodes
+                    mainOsc.connect(mainGain);
+                    mainGain.connect(audioContext.destination);
+                    
+                    harmonicOsc.connect(harmonicGain);
+                    harmonicGain.connect(audioContext.destination);
+                    
+                    // Start oscillators
+                    mainOsc.start();
+                    harmonicOsc.start();
+                    
+                    isMusicPlaying = true;
+                    if (musicIcon) {
+                        musicIcon.classList.remove('fa-play');
+                        musicIcon.classList.add('fa-pause');
+                    }
+                    if (tooltip) tooltip.textContent = "Mute Ambiance";
+                } catch (e) {
+                    console.error("Audio failed to play: ", e);
+                }
+            } else {
+                // Safely stop all active audio nodes
+                if (mainOsc) {
+                    try { mainOsc.stop(); } catch(e) {}
+                    mainOsc = null;
+                }
+                if (harmonicOsc) {
+                    try { harmonicOsc.stop(); } catch(e) {}
+                    harmonicOsc = null;
+                }
+                isMusicPlaying = false;
+                if (musicIcon) {
+                    musicIcon.classList.remove('fa-pause');
+                    musicIcon.classList.add('fa-play');
+                }
+                if (tooltip) tooltip.textContent = "Play Shehnai Ambiance";
+            }
+        }
+
+        // Add event listeners for music
+        document.getElementById('music-btn').addEventListener('click', toggleMusic);
+
+        // Countdown Timer Logic
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "<div class='col-span-4 text-royal-gold text-lg font-serif uppercase tracking-widest py-4'>The Auspicious Wedding Festivities Have Commenced!</div>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+        }
+
+        // Run countdown timer immediately and then continuously
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        function openPalaceInvitation() {
+            const screen = document.getElementById('grand-opening-screen');
+            const navbar = document.getElementById('royal-nav');
+            const mainContent = document.getElementById('main-content');
+            const envelope = document.getElementById('card-envelope');
+            
+            if (envelope.classList.contains('open-palace')) return;
+
+            // Trigger door animations
+            envelope.classList.add('open-palace');
+            
+            // Play sweet traditional music audio safely
+            try {
+                if(!isMusicPlaying) {
+                    toggleMusic();
+                }
+            } catch(err) {
+                console.warn("Audio start blocked or failed:", err);
+            }
+
+            // Smooth fadeout of opening gate overlay after gate animation completes
+            setTimeout(() => {
+                screen.classList.add('opacity-0');
+                screen.classList.add('pointer-events-none');
+                
+                // Show Main Content
+                mainContent.classList.remove('opacity-0');
+                mainContent.classList.add('opacity-100');
+                navbar.classList.remove('-translate-y-full');
+                navbar.classList.add('translate-y-0');
+
+                // Unlock body scrolling once entering the palace
+                document.body.classList.remove('overflow-hidden');
+                document.body.classList.add('overflow-y-auto', 'overflow-x-hidden');
+            }, 1800);
+        }
+
+        // Click listeners to make the card and the seal absolutely responsive
+        document.getElementById('card-envelope').addEventListener('click', openPalaceInvitation);
+        document.getElementById('central-seal').addEventListener('click', function(e) {
+            e.stopPropagation(); // Avoid double triggering
+            openPalaceInvitation();
+        });
+        document.getElementById('open-card-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            openPalaceInvitation();
+        });
+
+        // Toggle Mobile Navigation Drawer
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileCloseBtn = document.getElementById('mobile-close-btn');
+
+        function toggleMobileMenu() {
+            if (mobileMenu.classList.contains('translate-x-full')) {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenu.classList.remove('translate-x-0');
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        mobileCloseBtn.addEventListener('click', toggleMobileMenu);
+
+        // RSVP Form Confirmation Logic
+        const rsvpForm = document.getElementById('rsvp-form');
+        const rsvpSuccess = document.getElementById('rsvp-success');
+
+        rsvpForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get values
+            const name = document.getElementById('fullname').value;
+            const guests = document.getElementById('guests').value;
+            const attendRadio = document.querySelector('input[name="attendance"]:checked').value;
+            
+            // Add automatic blessing to list on yes attendance
+            if (attendRadio === 'yes' && name.trim() !== '') {
+                blessingsList.unshift({
+                    name: name,
+                    text: `Confirmed to celebrate the union! Blessings and love to the royal couple, Shri Krishna & Shri Gay.`
+                });
+                renderBlessingsWall();
+            }
+
+            // Show success screen
+            rsvpForm.classList.add('hidden');
+            rsvpSuccess.classList.remove('hidden');
+        });
+
+        function resetRSVPForm() {
+            rsvpForm.reset();
+            rsvpForm.classList.remove('hidden');
+            rsvpSuccess.classList.add('hidden');
+        }
+
+        // Blessings Wall Post Logic
+        function renderBlessingsWall() {
+            const wall = document.getElementById('blessings-wall');
+            wall.innerHTML = '';
+
+            blessingsList.forEach(blessing => {
+                const card = document.createElement('div');
+                card.className = 'royal-border-gold p-5 md:p-6 bg-royal-maroon/50 rounded-xl flex flex-col justify-between shadow-lg relative overflow-hidden';
+                card.innerHTML = `
+                    <div class="absolute top-2 right-2 text-royal-gold/20 text-4xl"><i class="fas fa-quote-right"></i></div>
+                    <div class="space-y-4">
+                        <p class="font-serif text-xs md:text-sm text-stone-200 italic leading-relaxed relative z-10">"${blessing.text}"</p>
+                    </div>
+                    <div class="mt-6 border-t border-royal-gold/20 pt-3 flex justify-between items-center">
+                        <span class="font-royal text-[11px] md:text-xs text-gold-300 font-bold tracking-wider">${blessing.name}</span>
+                        <span class="text-[9px] md:text-[10px] text-stone-400 font-sans tracking-widest uppercase bg-royal-dark px-2.5 py-1 rounded-full"><i class="fas fa-pray text-royal-gold mr-1"></i> Blessings</span>
+                    </div>
+                `;
+                wall.appendChild(card);
+            });
+        }
+
+        document.getElementById('post-blessing-btn').addEventListener('click', function() {
+            const nameInput = document.getElementById('blessing-name');
+            const textInput = document.getElementById('blessing-text');
+
+            if (nameInput.value.trim() === '' || textInput.value.trim() === '') {
+                nameInput.classList.add('border-red-500');
+                textInput.classList.add('border-red-500');
+                setTimeout(() => {
+                    nameInput.classList.remove('border-red-500');
+                    textInput.classList.remove('border-red-500');
+                }, 2000);
+                return;
+            }
+
+            // Push to blessings list array
+            blessingsList.unshift({
+                name: nameInput.value,
+                text: textInput.value
+            });
+
+            // Re-render
+            renderBlessingsWall();
+
+            // Clear fields with graceful confirmation
+            nameInput.value = '';
+            textInput.value = '';
+        });
+
+        // Initialize blessings wall view on startup
+        renderBlessingsWall();
+
+    </script>
+</body>
+</html>
