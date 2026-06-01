@@ -1391,3 +1391,45 @@ Mandap / Arch silhouette background */
     </script>
 </body>
 </html>
+
+<!-- Is code ko apni file ke bilkul end mein daal dein -->
+    <script>
+        const openBtn = document.getElementById('open-card-btn');
+        const centralSeal = document.getElementById('central-seal');
+        const envelope = document.getElementById('card-envelope');
+        const openingScreen = document.getElementById('grand-opening-screen');
+        const mainContent = document.getElementById('main-content');
+        const royalNav = document.getElementById('royal-nav');
+
+        // Jab central seal par click ho toh door animation chale
+        if(centralSeal) {
+            centralSeal.addEventListener('click', () => {
+                envelope.classList.add('open-palace');
+            });
+        }
+
+        // Jab Enter Royal Palace button par click ho toh screen khule aur scroll chalu ho
+        if(openBtn) {
+            openBtn.addEventListener('click', () => {
+                // Lifafe ko animate karein
+                envelope.classList.add('open-palace');
+                
+                setTimeout(() => {
+                    // Opening screen ko gayab karein
+                    openingScreen.classList.add('opacity-0', 'pointer-events-none');
+                    
+                    // Main content ko dikhayein aur scroll open karein
+                    document.body.classList.remove('overflow-hidden');
+                    document.body.classList.add('overflow-y-auto');
+                    mainContent.classList.remove('opacity-0');
+                    mainContent.classList.add('opacity-100');
+                    
+                    // Navbar ko upar se niche le kar aayein
+                    royalNav.classList.remove('-translate-y-full');
+                    royalNav.classList.add('translate-y-0');
+                }, 1000);
+            });
+        }
+    </script>
+</body>
+</html>
