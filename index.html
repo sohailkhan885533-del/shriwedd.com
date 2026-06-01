@@ -1391,39 +1391,3 @@ Mandap / Arch silhouette background */
     </script>
 </body>
 </html>
-
-<script>
-        const centralSeal = document.getElementById('central-seal');
-        const openCardBtn = document.getElementById('open-card-btn');
-        const grandOpeningScreen = document.getElementById('grand-opening-screen');
-        const mainContent = document.getElementById('main-content');
-        const royalNav = document.getElementById('royal-nav');
-
-        function openRoyalPalace() {
-            // Lifafa kholne ka animation start hoga
-            document.getElementById('card-envelope').classList.add('open-palace');
-            
-            // 1.2 seconds baad pura scroll khulega aur baki sections dikhenge
-            setTimeout(() => {
-                grandOpeningScreen.classList.add('opacity-0', 'pointer-events-none');
-                
-                // Body ka scroll unlock karein
-                document.body.classList.remove('overflow-hidden');
-                document.body.classList.add('overflow-y-auto');
-                
-                // Main content aur navbar ko smooth show karein
-                mainContent.classList.remove('opacity-0');
-                mainContent.classList.add('opacity-100');
-                if(royalNav) {
-                    royalNav.classList.remove('-translate-y-full');
-                    royalNav.classList.add('translate-y-0');
-                }
-            }, 1200);
-        }
-
-        // Dono buttons par click event active karein
-        if (centralSeal) centralSeal.addEventListener('click', openRoyalPalace);
-        if (openCardBtn) openCardBtn.addEventListener('click', openRoyalPalace);
-    </script>
-</body>
-</html>
